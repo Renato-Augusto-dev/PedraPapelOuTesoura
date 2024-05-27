@@ -12,16 +12,17 @@ public class PedraPapelTesoura {
         System.out.printf("Escolha entre: \n(1)papel, \n(2)tesoura, \n(3)pedra: \n");
         System.out.println("******************************************");
 
-        try {
+
+
             escolha = leitor.nextInt();
             cpu = gerador.nextInt(3) + 1;
 
-            System.out.println(resultadoDoJogo(escolha, cpu));
+            while (escolha >= 4 || escolha <=0){
+                System.out.printf("Escolha entre: \n(1)papel, \n(2)tesoura, \n(3)pedra: \n");
+                escolha = leitor.nextInt();
+            }
 
-        } catch (Exception erro){
-            System.out.println("A sua escolha deve ser um NUMERO de 1 a 3 ");
-            
-        }
+            System.out.println(resultadoDoJogo(escolha, cpu));
 
     }
 
